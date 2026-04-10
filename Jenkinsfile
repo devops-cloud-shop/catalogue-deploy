@@ -1,12 +1,14 @@
 @Library('jenkins-shared-library') _
 
+// parameters must be declared before the pipeline logic executes//
 properties([
   parameters([
     string(name: 'APP_VERSION', defaultValue: ''),
-    string(name: 'DEPLOY_TO', defaultValue: 'dev')
+    choice(name: 'DEPLOY_TO', choices: ['dev', 'qa', 'prod'], description: 'Target environment')
   ])
 ])
 
+// build configMap from params (with safe defaults)//
 def configMap = [
     PROJECT : "roboshop",
     COMPONENT: "catalogue",
