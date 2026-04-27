@@ -1,7 +1,7 @@
 configmap:
   mongoURL: "mongodb://mongodb:27017/catalogue"
 deployment:
-  image: 600442391603.dkr.ecr.us-east-1.amazonaws.com/roboshop/catalogue
+  imageRepo: 600442391603.dkr.ecr.us-east-1.amazonaws.com/roboshop/catalogue
   imageVersion: IMAGE_VERSION
 service:
   servicePort: 8080 # default value
